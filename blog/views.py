@@ -28,7 +28,7 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "liked": liked,
-                "comment_form": Comment_Form()
+                "comment_form": CommentForm()
             }
         )
 
