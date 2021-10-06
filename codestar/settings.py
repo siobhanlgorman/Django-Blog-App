@@ -107,26 +107,26 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-development = os.environ.get('DEVELOPMENT', False)
+# development = os.environ.get('DEVELOPMENT', False)
 
-if development:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+# if development:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
 
 
-# elaine
-if development:
-    ALLOWED_HOSTS = ['localhost']
-else:
-    ALLOWED_HOSTS = ['slgcodestar2021.herokuapp.com']
+# # elaine
+# if development:
+#     ALLOWED_HOSTS = ['localhost']
+# else:
+#     ALLOWED_HOSTS = ['slgcodestar2021.herokuapp.com']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -138,9 +138,10 @@ else:
 #     }
 # }
 
-# DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-# }
+# comment out if using elaine suggestion
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 
 
 # Password validation
