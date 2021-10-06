@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post
-# from .forms import CommentForm
+from .forms import CommentForm
 
 
 class PostList(generic.ListView):
@@ -31,7 +31,7 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                # "comment_form": CommentForm()
+                "comment_form": CommentForm()
             },
 
         )
